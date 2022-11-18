@@ -5,6 +5,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title> Plant Disease Prediction</title>
+<link rel = "icon" type = "image/png" href = "https://static.vecteezy.com/system/resources/thumbnails/005/358/239/small/simple-minimalist-plant-leaf-for-nature-garden-environment-logo-design-free-vector.jpg">
   <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
 <link href='https://fonts.googleapis.com/css?family=Arimo' rel='stylesheet' type='text/css'>
 <link href='https://fonts.googleapis.com/css?family=Hind:300' rel='stylesheet' type='text/css'>
@@ -234,7 +235,7 @@ img {vertical-align: middle;}
   <div class="topnav-right"style="padding-top:0.5%;">
     
     <a class="active" href="{{ url_for('home')}}">Home</a>
-    <a href="/Predict" class="button">Predict</button></a>
+    <a href="{{ url_for('prediction')}}">Predict</a>
   </div>
 </div>
 
@@ -242,14 +243,12 @@ img {vertical-align: middle;}
 <div style="width:60%;float:left;">
 <div style="font-size:50px;font-family:Montserrat;padding-left:20px;text-align:center;padding-top:10%;">
 <b>Detect if your plant<br> is infected!!</b></div><br>
-<div style="font-size:20px;font-family:Montserrat;padding-left:70px;padding-right:30px;text-align:justify;">Agriculture was the essential development in the rise of human 
-  civilization, whereby farming of acclimatize species produced food oversupply that enabled people to reside in cities.
-  Plants were independently sophisticated in at least 11 regions of the world. Industrial agriculture based on large-scale monocropping in the twentieth century came to influence agricultural output, though 
-  about 2 billion people still depended on maintaining agriculture.The plant diseases effect the production. Identification of diseases and taking necessary precautions is all done through naked eye, which requires labour and laboratries. This application helps farmers in detecting the diseases by observing the spots on the leaves, which inturn saves effort and labor costs.</div><br><br>
+<div style="font-size:20px;font-family:Montserrat;padding-left:70px;padding-right:30px;text-align:justify;">Agriculture is one of the major sectors worls wide. Over the years it has developed and the use of new technologies and equipment replaced almost all the traditional methods of farming. The plant diseases effect the production. Identification of diseases and taking necessary precautions is all done through naked eye, which requires labour and laboratries. This application helps farmers in detecting the diseases by observing the spots on the leaves, which inturn saves effort and labor costs.
+lant disease, especially on leaves, is one of the major factors that reduce the yield in both quality and quantity of the food crops. Finding the leaf disease is an important role to preserve agriculture. Smart analysis and Comprehensive prediction model in agriculture helps the farmer to yield right crop at the right time. The main benefits of the proposed system are as follows: Yield right crop at the right time, Balancing the crop production, control plant disease, Economic growth, and planning to reduce the crop scarcity. Hence to Detect and recognize the plant diseases and to recommend fertilizer it is necessary to provide symptoms in identifying the disease at its earliest.</div><br><br>
 </div>
 </div>
 <div style="width:40%;float:right;"><br><br>
-<img src="https://images.pexels.com/photos/35196/water-plant-green-fine-layers.jpg" style="max-height:100%;max-width:100%;">
+<img src="https://images.unsplash.com/photo-1444858291040-58f756a3bdd6?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1078&q=80" style="max-height:100%;max-width:100%;">
 
 </div>
 </div>
@@ -274,8 +273,11 @@ function showSlides() {
   slideIndex++;
   if (slideIndex > slides.length) {slideIndex = 1}    
   for (i = 0; i < dots.length; i++) {
-    dots[i].className = dots[i].className.replace(" active", "")
+    dots[i].className = dots[i].className.replace(" active", "");
   }
+  slides[slideIndex-1].style.display = "block";  
+  dots[slideIndex-1].className += " active";
+  setTimeout(showSlides, 2000); // Change image every 2 seconds
 }
 </script>
 </body>
